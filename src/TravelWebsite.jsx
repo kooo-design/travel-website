@@ -6,8 +6,6 @@ import travelIcon from "./assets/travel.png";
 import whatsappIcon from "./assets/wa.png";
 import tiktokIcon from "./assets/tiktok.png";
 import instagramIcon from "./assets/instagram.png";
-import bdgImg from "./assets/bdg.jpg";
-import yogyaImg from "./assets/yogya.png";
 
 const destinations = [
   {
@@ -32,6 +30,14 @@ const destinations = [
     days: "3 Hari",
     minPeople: "Min 10 Orang",
     img: yogyaImg,
+    category: ["Semua", "Trending", "Kota"],
+  },
+  {
+    id: 4,
+    name: "Bandung",
+    days: "1 Hari",
+    minPeople: "Min 10 Orang",
+    img: bdgImg,
     category: ["Semua", "Trending", "Kota"],
   },
   {
