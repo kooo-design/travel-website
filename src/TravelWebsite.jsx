@@ -6,6 +6,8 @@ import travelIcon from "./assets/travel.png";
 import whatsappIcon from "./assets/wa.png";
 import tiktokIcon from "./assets/tiktok.png";
 import instagramIcon from "./assets/instagram.png";
+import yogyaImg from "./assets/yogya.jpg";
+import bdgImg from "./assets/bdg.jpg";
 
 const destinations = [
   {
