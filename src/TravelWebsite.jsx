@@ -8,6 +8,7 @@ import tiktokIcon from "./assets/tiktok.png";
 import instagramIcon from "./assets/instagram.png";
 import yogyaImg from "./assets/yogya.png";
 import bdgImg from "./assets/bdg.jpg";
+import bandungImg from "./assets/BANDUNG.jpg";
 
 const destinations = [
   {
@@ -71,7 +72,7 @@ const gallery = [
     id: 3,
     name: "Bandung",
     by: "By hadiaulputra, di Instagram",
-    img: "https://images.unsplash.com/photo-1605639955698-6cd9c5e10abb?w=600&h=480&fit=crop",
+    img: bandungImg,
     tall: true,
   },
   {
