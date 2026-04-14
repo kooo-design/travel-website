@@ -6,6 +6,7 @@ import travelIcon from "./assets/travel.png";
 import whatsappIcon from "./assets/wa.png";
 import tiktokIcon from "./assets/tiktok.png";
 import instagramIcon from "./assets/instagram.png";
+import bdgImg from "./assets/bdg.jpg";
 
 const destinations = [
   {
@@ -37,7 +38,7 @@ const destinations = [
     name: "Bandung",
     days: "1 Hari",
     minPeople: "Min 10 Orang",
-    img: "https://dte.telkomuniversity.ac.id/bandung-kota-kreatif-yang-tak-pernah-kehilangan-pesonanya/",
+    img: bdgImg,
     category: ["Semua", "Trending", "Kota"],
   },
 ];
