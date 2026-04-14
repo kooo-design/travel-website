@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <linearGradient id="instaGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+    <stop offset="0%" stop-color="#feda75"/>
+    <stop offset="50%" stop-color="#d62976"/>
+    <stop offset="100%" stop-color="#4f5bd5"/>
+  </linearGradient>
+  <rect width="24" height="24" rx="6" fill="url(#instaGrad)"/>
+  <path d="M16.5 7.5h-9A2 2 0 0 0 5.5 9.5v9a2 2 0 0 0 2 2h9a2 2 0 0 0 2-2v-9a2 2 0 0 0-2-2zm-4.5 11a3.5 3.5 0 1 1 .001-7.001A3.5 3.5 0 0 1 12 18.5zm4.75-7.75a.75.75 0 1 1 0-1.5.75.75 0 0 1 0 1.5z" fill="#fff"/>
+  <circle cx="12" cy="11.5" r="2" fill="#fff" opacity="0.9"/>
+</svg>
