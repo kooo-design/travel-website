@@ -32,6 +32,14 @@ const destinations = [
     img: "https://images.unsplash.com/photo-1555400038-63f5ba517a47?w=400&h=280&fit=crop",
     category: ["Semua", "Trending", "Kota"],
   },
+  {
+    id: 4,
+    name: "Bandung",
+    days: "1 Hari",
+    minPeople: "Min 10 Orang",
+    img: "https://images.unsplash.com/photo-1555400038-63f5ba517a47?w=400&h=280&fit=crop",
+    category: ["Semua", "Trending", "Kota"],
+  },
 ];
 
 const gallery = [
