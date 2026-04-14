@@ -111,6 +111,7 @@ export default function TravelWebsite() {
   const [activeTab, setActiveTab] = useState("Semua");
   const [destination, setDestination] = useState("Semarang");
   const [people, setPeople] = useState("Dua");
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [navbarStyle, setNavbarStyle] = useState({
     background: "rgba(0, 0, 0, 0.36)",
     textColor: "white",
@@ -242,6 +243,94 @@ export default function TravelWebsite() {
           font-family: 'Poppins', sans-serif; white-space: nowrap; flex-shrink: 0;
         }
         .cari-btn:hover { background: #569643; }
+
+        /* Mobile Menu Styles */
+        .hamburger {
+          display: none;
+          flex-direction: column;
+          cursor: pointer;
+          gap: 4px;
+          padding: 8px;
+          border-radius: 4px;
+          transition: background 0.2s;
+        }
+        .hamburger:hover { background: rgba(255,255,255,0.1); }
+        .hamburger span {
+          width: 24px;
+          height: 2px;
+          background: currentColor;
+          transition: all 0.3s;
+          transform-origin: center;
+        }
+        .hamburger.open span:nth-child(1) { transform: rotate(45deg) translate(6px, 6px); }
+        .hamburger.open span:nth-child(2) { opacity: 0; }
+        .hamburger.open span:nth-child(3) { transform: rotate(-45deg) translate(6px, -6px); }
+
+        .mobile-menu {
+          position: fixed;
+          top: 64px;
+          left: 0;
+          width: 100%;
+          background: rgba(0, 0, 0, 0.95);
+          backdrop-filter: blur(10px);
+          transform: translateY(-100%);
+          opacity: 0;
+          visibility: hidden;
+          transition: all 0.3s ease;
+          z-index: 99;
+        }
+        .mobile-menu.open {
+          transform: translateY(0);
+          opacity: 1;
+          visibility: visible;
+        }
+        .mobile-menu-content {
+          padding: 24px;
+          display: flex;
+          flex-direction: column;
+          gap: 20px;
+        }
+        .mobile-menu a {
+          color: white;
+          text-decoration: none;
+          font-weight: 600;
+          font-size: 16px;
+          padding: 12px 0;
+          border-bottom: 1px solid rgba(255,255,255,0.1);
+          transition: color 0.2s;
+        }
+        .mobile-menu a:hover { color: #22c55e; }
+        .mobile-menu .btn-green {
+          align-self: flex-start;
+          margin-top: 16px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+          nav { padding: 0 24px; }
+          nav .nav-links { display: none; }
+          nav .booking-btn { display: none; }
+          .hamburger { display: flex; }
+          
+          .search-bar {
+            flex-direction: column;
+            max-width: 100%;
+            gap: 12px;
+          }
+          .search-bar > div { flex-direction: row; }
+          .sdiv { display: none; }
+          
+          .hero h1 { font-size: 36px; }
+          .hero p { font-size: 14px; }
+          
+          section { padding: 40px 24px; }
+          #destinations { padding: 0 24px 40px; }
+          
+          .destinations-grid { grid-template-columns: 1fr; }
+          
+          footer { padding: 40px 24px 24px; }
+          footer .footer-grid { grid-template-columns: 1fr; text-align: center; }
+        }
       `}</style>
 
       {/* ── NAVBAR ── */}
@@ -295,7 +384,10 @@ export default function TravelWebsite() {
           </span>
         </div>
 
-        <div style={{ display: "flex", gap: 32, alignItems: "center" }}>
+        <div
+          style={{ display: "flex", gap: 32, alignItems: "center" }}
+          className="nav-links"
+        >
           {[
             { label: "Home", href: "home" },
             { label: "Tentang Kami", href: "about" },
@@ -323,10 +415,55 @@ export default function TravelWebsite() {
           ))}
         </div>
 
-        <button className="btn-green" onClick={handleWhatsAppClick}>
-          Booking Now
-        </button>
+        <div style={{ display: "flex", alignItems: "center", gap: 16 }}>
+          <button
+            className="btn-green booking-btn"
+            onClick={handleWhatsAppClick}
+            style={{ display: "block" }}
+          >
+            Booking Now
+          </button>
+          <button
+            className={`hamburger ${isMobileMenuOpen ? "open" : ""}`}
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            style={{ color: navbarStyle.textColor }}
+          >
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
       </nav>
+
+      {/* Mobile Menu */}
+      <div className={`mobile-menu ${isMobileMenuOpen ? "open" : ""}`}>
+        <div className="mobile-menu-content">
+          {[
+            { label: "Home", href: "home" },
+            { label: "Tentang Kami", href: "about" },
+            { label: "Destinasi", href: "destinations" },
+            { label: "Pelayanan", href: "services" },
+            { label: "Galeri Konsumen", href: "gallery" },
+          ].map((item) => (
+            <a
+              key={item.href}
+              href={`#${item.href}`}
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+              {item.label}
+            </a>
+          ))}
+          <button
+            className="btn-green"
+            onClick={() => {
+              handleWhatsAppClick();
+              setIsMobileMenuOpen(false);
+            }}
+          >
+            Booking Now
+          </button>
+        </div>
+      </div>
 
       {/* ── HERO ── */}
       {/* ✅ FIX 4: Hero pakai width: 100vw agar benar-benar full layar */}
@@ -571,6 +708,7 @@ export default function TravelWebsite() {
 
         <div style={{ maxWidth: 1100, margin: "0 auto" }}>
           <div
+            className="destinations-grid"
             style={{
               display: "grid",
               gridTemplateColumns: "repeat(auto-fill, minmax(300px, 1fr))",
@@ -794,6 +932,7 @@ export default function TravelWebsite() {
         }}
       >
         <div
+          className="footer-grid"
           style={{
             maxWidth: 1100,
             margin: "0 auto",
