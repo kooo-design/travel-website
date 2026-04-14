@@ -45,7 +45,7 @@ const destinations = [
     category: ["Semua", "Trending", "Kota"],
   },
   {
-    id: 4,
+    id: 5,
     name: "Bandung",
     days: "1 Hari",
     minPeople: "Min 10 Orang",
