@@ -7,6 +7,7 @@ import whatsappIcon from "./assets/wa.png";
 import tiktokIcon from "./assets/tiktok.png";
 import instagramIcon from "./assets/instagram.png";
 import bdgImg from "./assets/bdg.jpg";
+import yogyaImg from "./assets/yogya.png";
 
 const destinations = [
   {
@@ -30,7 +31,7 @@ const destinations = [
     name: "Jogjakarta",
     days: "3 Hari",
     minPeople: "Min 10 Orang",
-    img: "https://images.unsplash.com/photo-1555400038-63f5ba517a47?w=400&h=280&fit=crop",
+    img: yogyaImg,
     category: ["Semua", "Trending", "Kota"],
   },
   {
