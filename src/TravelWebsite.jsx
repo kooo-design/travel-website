@@ -37,7 +37,7 @@ const destinations = [
     name: "Bandung",
     days: "1 Hari",
     minPeople: "Min 10 Orang",
-    img: "https://images.unsplash.com/photo-1555400038-63f5ba517a47?w=400&h=280&fit=crop",
+    img: "https://dte.telkomuniversity.ac.id/bandung-kota-kreatif-yang-tak-pernah-kehilangan-pesonanya/",
     category: ["Semua", "Trending", "Kota"],
   },
 ];
