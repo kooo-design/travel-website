@@ -9,6 +9,7 @@ import instagramIcon from "./assets/instagram.png";
 import yogyaImg from "./assets/yogya.png";
 import bdgImg from "./assets/bdg.jpg";
 import bandungImg from "./assets/BANDUNG.jpg";
+import whatsappImg from "./assets/whatsapp.png";
 
 const destinations = [
   {
@@ -921,7 +922,7 @@ export default function TravelWebsite() {
         onClick={handleWhatsAppClick}
       >
         <img
-          src="/src/assets/whatsapp.png"
+          src={whatsappImg}
           alt="WhatsApp"
           style={{ width: "30px", height: "30px", objectFit: "contain" }}
         />
